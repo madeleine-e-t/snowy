@@ -1,1 +1,43 @@
+penUp();
+drawAllTrees();
+
+// code multiple trees
+function drawAllTrees() {
+  for (var i = 0; i < 10; i++) {
+  moveTo(randomNumber(10,300),randomNumber(100,160));
+	drawTree(randomNumber(5,20),randomNumber(200,255),randomNumber(100,150),120);  
+  }
+  
+}
+
+// code individul tree
+function drawTree(size) {
+  moveTo(randomNumber(1, 290), randomNumber(300,420));
+  penRGB(85, randomNumber(100,150),20);
+  penWidth(size);
+  penDown();
+  
+// top half of tree
+  turnTo(0);
+  turnRight(90);
+  moveForward(size);
+  turnLeft(120);
+  moveForward(size*2);
+  turnLeft(120);
+  moveForward(size*2);
+  
+// bottom half of tree
+  turnLeft(120);
+  moveForward(size);
+  turnRight(120);
+  moveForward(size*2.5);
+  turnLeft(120);
+  moveForward(size*2.5);
+  turnLeft(120);
+  moveForward(size*2.5);
+  
+  penUp();
+  hide();
+  
+}
 
