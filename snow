@@ -1,0 +1,44 @@
+// Prepare Turtle to Draw
+hide();
+penUp();
+
+
+// Functions
+drawBackground();
+drawAllSnow();
+drawSnowFloor();
+
+
+// snow floor
+function drawSnowFloor() {
+  penRGB(255, 255, 255);
+  penWidth(100);
+  moveTo(0, 400);
+  penDown();
+  moveTo(320, 400);
+  penUp();
+}
+
+
+// Repeate snow
+function drawAllSnow(){
+  for (var i = 0; i < 250; i++) {
+    moveTo(randomNumber(0,320),randomNumber(0,450));
+    drawSnow(randomNumber(1,5));
+  }
+}
+
+
+
+// Make the background by drawing a large blue dot
+function drawBackground(){
+  penColor("LightBlue");
+  dot(1000);
+}
+
+
+// snow is semi-transparent dots
+function drawSnow(size){
+  penRGB(255,255,255,0.5);
+  dot(size);
+}
